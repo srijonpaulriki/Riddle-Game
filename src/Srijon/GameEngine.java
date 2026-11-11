@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-// ==================== GAME ENGINE ====================
+
 public class GameEngine {
     private final InputReader input = new InputReader();
     private final Leaderboard leaderboard = new Leaderboard();

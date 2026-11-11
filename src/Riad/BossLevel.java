@@ -1,6 +1,7 @@
 package Riad;
 
-class BossLevel extends RiddleLevel {
+public class BossLevel extends RiddleLevel {
+
     public BossLevel(int number, String question, String[] answers) {
         super(number, question, answers);
     }
