@@ -4,7 +4,7 @@ import javax.sound.sampled.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-// ==================== OPTIONAL SOUND ====================
+
 public class SoundEffects implements AutoCloseable {
     public boolean enabled = false;
     private boolean musicWanted;

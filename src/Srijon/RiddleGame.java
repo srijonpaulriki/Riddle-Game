@@ -5,14 +5,14 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-// ==================== MAIN ====================
+
 public class RiddleGame {
     public static void main(String[] args) {
         new GameEngine().run();
     }
 }
 
-// ==================== KEYBOARD THREAD ====================
+
 class InputReader implements Runnable {
     static final class Entry {
         final String text;
@@ -29,8 +29,7 @@ class InputReader implements Runnable {
     private volatile boolean closed;
     @Override
     public void run() {
-        // Keep one reader for all games and menus.
-        // Do not close System.in between games.
+
         Scanner scanner = new Scanner(System.in);
         try {
             while (scanner.hasNextLine()) {
