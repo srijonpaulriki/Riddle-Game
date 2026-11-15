@@ -96,10 +96,9 @@ Before running the project, make sure you have:
 Open a terminal and execute:
 
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY-NAME.git
+git clone https://github.com/srijonpaulriki/Riddle-Game.git
 ```
 
-Replace `USERNAME` and `REPOSITORY-NAME` with the actual GitHub repository information.
 
 ### Step 2: Open the Project
 
