@@ -78,7 +78,7 @@ public class GameEngine {
                 try {
                     playLevel(levels.get(i), i, levels.size());
                 } finally {
-                    // Never carry ticking into another question.
+
                     sound.stopTicking();
                 }
             }
@@ -128,8 +128,7 @@ public class GameEngine {
             result.addAll(regular.subList(0, 9));
             result.add(bosses.get(0));
         } else {
-            // Shuffle regular riddles within each chapter.
-            // Keep each original boss at the end of its chapter.
+
             for (int chapter = 0; chapter < 5; chapter++) {
                 int start = chapter * 10;
                 List<Level> regular = new ArrayList<>(all.subList(start, start + 9));
@@ -168,7 +167,7 @@ public class GameEngine {
                     noticeColor = Colors.RED;
                     warned = false;
                     lastShown = -1;
-                    // Keep the partially typed answer and its cursor in place.
+
                     continue;
                 }
                 int seconds = (int) ((remaining + 999_999_999L) / 1_000_000_000L);
@@ -245,8 +244,7 @@ public class GameEngine {
                     notice = "Wrong answer! -1 life. Try again.";
                     noticeColor = Colors.RED;
                 }
-                // A submitted answer ended the input line. Redraw once, then
-                // resume input. Timer updates alone never redraw the question.
+
                 showQuestion(level, index, total, false);
                 ConsoleUI.prompt("Your answer: ");
                 lastShown = -1;
@@ -348,7 +346,7 @@ public class GameEngine {
                     return choice;
                 }
             } catch (NumberFormatException ignored) {
-                // Display a helpful message below.
+
             }
             ConsoleUI.message("Enter a number from 1 to " + maximum + ".");
         }

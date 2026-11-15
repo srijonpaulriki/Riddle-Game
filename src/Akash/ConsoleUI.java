@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class ConsoleUI {
-    // Override at launch: -Driddle.columns=100 -Driddle.top=2
+
     public static int columns = Math.max(68, Integer.getInteger("riddle.columns", 120));
     static final int TOP = Math.max(0, Math.min(6, Integer.getInteger("riddle.top", 2)));
     public static final boolean ansi = Boolean.parseBoolean(System.getProperty("riddle.ansi", String.valueOf(System.console() != null)));
@@ -32,7 +32,7 @@ public class ConsoleUI {
         previousNotice = "";
         if (ansi) System.out.print("\033[0m\033[2J\033[H");
         else System.out.println();
-        // Reserve two rows for timer/status, followed by a blank row.
+
         System.out.print("\n".repeat(TOP + 3));
         System.out.flush();
     }
@@ -109,12 +109,12 @@ public class ConsoleUI {
                 + "  " + Colors.paint(player.getHearts(), Colors.RED)
                 + Colors.paint("  Score: " + player.getScore(), Colors.YELLOW);
         if (ansi) {
-            // Save the input cursor, update only the reserved rows, restore it.
-            // Send the whole update in a single print call.
+
+
             System.out.print("\0337\033[" + (TOP + 1) + ";1H\033[2K" + indent() + header + "\033[" + (TOP + 2) + ";1H\033[2K" + indent() + Colors.paint(notice, noticeColor) + "\0338");
             System.out.flush();
         } else if (!notice.equals(previousNotice)) {
-            // IDE/redirected-output fallback: no scrolling per-second countdown.
+
             System.out.println();
             message(timer + " | Lives: " + player.getLives() + " | Score: " + player.getScore());
             message(notice);
