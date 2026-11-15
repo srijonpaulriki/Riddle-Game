@@ -1,6 +1,6 @@
 package Riad;
 
-// ==================== PLAYER ====================
+
 public class Player {
     private final String name;
     private final int maximumLives;

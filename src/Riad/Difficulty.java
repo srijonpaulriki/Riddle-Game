@@ -1,6 +1,6 @@
 package Riad;
 
-// ==================== DIFFICULTY ====================
+
 public enum Difficulty {
     EASY(7, 60, 90),
     NORMAL(5, 40, 60),

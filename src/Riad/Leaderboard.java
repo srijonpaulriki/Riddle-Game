@@ -7,7 +7,7 @@ import java.nio.file.*;
 import java.time.LocalDate;
 import java.util.*;
 
-// ==================== SAVED LEADERBOARD ====================
+
 public class Leaderboard {
     public static final class Score {
         public final String name;
@@ -76,7 +76,7 @@ public class Leaderboard {
             try {
                 scores.add(Score.decode(line));
             } catch (RuntimeException ignored) {
-                // Skip damaged records without losing valid ones.
+
             }
         }
         return scores;

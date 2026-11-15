@@ -30,7 +30,7 @@ public class SoundEffects implements AutoCloseable {
         if (tickingWanted) startTicking();
     }
 
-    // Quiet background melody that repeats during gameplay.
+
     public void startMusic() {
         musicWanted = true;
         if (!enabled || audioUnavailable) return;
@@ -45,7 +45,6 @@ public class SoundEffects implements AutoCloseable {
         stopLoop(music);
     }
 
-    // One tick each second during the final 10 seconds.
     public void startTicking() {
         tickingWanted = true;
         if (!enabled || audioUnavailable) return;
@@ -60,7 +59,7 @@ public class SoundEffects implements AutoCloseable {
         stopLoop(ticking);
     }
 
-    // Existing correct/wrong-answer sounds.
+
     public void play(boolean correct) {
         if (correct) {
             playOnce(new double[]{660, 880}, new int[]{100, 150}, 0.22);
@@ -69,12 +68,12 @@ public class SoundEffects implements AutoCloseable {
         }
     }
 
-    // Rising celebration tune.
+
     public void victory() {
         playOnce(new double[]{523, 659, 784, 1047, 0, 784, 1047}, new int[]{140, 140, 140, 400, 100, 180, 600}, 0.25);
     }
 
-    // Descending game-over tune.
+
     public void gameOver() {
         playOnce(new double[]{392, 330, 294, 247, 196}, new int[]{220, 220, 220, 300, 650}, 0.24);
     }
