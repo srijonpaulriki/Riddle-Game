@@ -39,7 +39,9 @@ Players progress through different levels by answering riddles correctly while m
 | Multithreading | Timer and input management |
 | Exception Handling | Error management |
 | File Handling | Data storage |
+| Java Collections | Managing game data |
 | ANSI Escape Codes | Console styling |
+| Windows Batch Script | Simplified game launching |
 | IntelliJ IDEA | Development environment |
 | Git & GitHub | Version control and collaboration |
 
@@ -50,6 +52,7 @@ Players progress through different levels by answering riddles correctly while m
 The project demonstrates several important Java programming concepts.
 
 ### 1. Object-Oriented Programming (OOP)
+
 - Classes and Objects
 - Encapsulation
 - Inheritance
@@ -59,22 +62,28 @@ The project demonstrates several important Java programming concepts.
 - Constructors
 
 ### 2. Multithreading
+
 - Thread creation
 - Runnable interface
 - Concurrent execution
 - Timed input handling
+- Thread synchronization and management
 
 ### 3. Exception Handling
+
 - Try-catch blocks
 - InterruptedException
-- Input and file error handling
+- Input error handling
+- File error handling
 
 ### 4. Java Collections
+
 - ArrayList
 - Queue
 - Collection-based data management
 
 ### 5. File Handling
+
 - Reading data from files
 - Writing game information
 - Maintaining leaderboard records
@@ -83,15 +92,39 @@ The project demonstrates several important Java programming concepts.
 
 ## 🚀 How to Run the Game
 
-### Prerequisites
+Riddle Quest can be launched using the provided **`rungame.bat`** file or directly through a Java-compatible IDE.
+
+For Windows users, running the game through `rungame.bat` is the recommended method.
+
+### 📋 Prerequisites
 
 Before running the project, make sure you have:
 
-- Java Development Kit (JDK)
-- IntelliJ IDEA or another Java-compatible IDE
-- Git (optional)
+- **Java Development Kit (JDK)** installed.
+- **Windows 10/11** for the batch-file method.
+- **Command Prompt, PowerShell, or Windows Terminal**.
+- **IntelliJ IDEA** or another Java-compatible IDE (optional).
+- **Git** (optional, for cloning the repository).
 
-### Step 1: Clone the Repository
+You can verify that Java is installed by opening a terminal and executing:
+
+```bash
+java -version
+```
+
+To verify that the Java compiler is available:
+
+```bash
+javac -version
+```
+
+If both commands display version information, your Java environment is ready.
+
+### 📥 Step 1: Download the Project
+
+You can download the project using either method.
+
+**Option 1: Clone Using Git**
 
 Open a terminal and execute:
 
@@ -99,76 +132,170 @@ Open a terminal and execute:
 git clone https://github.com/srijonpaulriki/Riddle-Game.git
 ```
 
+Navigate to the downloaded project:
 
-### Step 2: Open the Project
+```bash
+cd Riddle-Game
+```
 
-1. Launch IntelliJ IDEA.
+**Option 2: Download ZIP**
+
+1. Visit the [Riddle Quest GitHub Repository](https://github.com/srijonpaulriki/Riddle-Game).
+2. Click the green **Code** button.
+3. Select **Download ZIP**.
+4. Extract the downloaded ZIP file.
+5. Open the extracted project folder.
+
+### 🎮 Step 2: Launch Using `rungame.bat` (Recommended)
+
+The project includes a Windows batch file named **`rungame.bat`**, which provides a convenient way to launch the game.
+
+You do not need to open IntelliJ IDEA to use this method.
+
+#### Method 1: Double-Click to Play
+
+1. Open the downloaded project folder.
+2. Locate the **`rungame.bat`** file.
+3. Double-click the file.
+4. Follow the instructions displayed in the terminal.
+5. Enter your player name and start playing!
+
+#### Method 2: Run Using Command Prompt
+
+Open Command Prompt and navigate to the project directory.
+
+Execute:
+
+```bat
+rungame.bat
+```
+
+#### Method 3: Run Using PowerShell
+
+Open PowerShell inside the project folder.
+
+Execute:
+
+```powershell
+.\rungame.bat
+```
+
+The batch file provides a convenient way to launch Riddle Quest without manually entering the Java launch commands.
+
+> **Note:** The `rungame.bat` file is designed for Windows. Make sure the JDK is installed and Java is accessible through your system's PATH.
+
+### 💻 Step 3: Run Using IntelliJ IDEA (Alternative)
+
+Developers who want to explore or modify the source code can run the project directly through IntelliJ IDEA.
+
+1. Launch **IntelliJ IDEA**.
 2. Select **Open**.
 3. Navigate to the downloaded project folder.
-4. Select the project.
+4. Open the project.
 5. Configure the Java SDK if necessary.
+6. Locate the `RiddleGame.java` file.
+7. Run its `main()` method.
 
-### Step 3: Run the Game
+### 🎨 Recommended Terminal Settings
 
-Locate the `RiddleGame.java` file containing the `main()` method.
+For the best gameplay experience:
 
-Run the program using IntelliJ IDEA.
+- Use **Windows Terminal, Command Prompt, or PowerShell**.
+- Use a terminal that supports ANSI escape codes.
+- Enable UTF-8 support for Unicode characters.
+- Maximize the terminal window for better visibility.
+- Ensure system audio is enabled for sound effects.
 
-For the best console experience, use a terminal that supports ANSI colors and Unicode characters.
+**🎉 You're ready to begin your Riddle Quest adventure!**
 
 ---
 
 ## 🎯 How to Play
 
-1. Launch Riddle Quest.
+1. Launch Riddle Quest using `rungame.bat` or IntelliJ IDEA.
 2. Enter your player name.
 3. Start the game.
 4. Read each riddle carefully.
 5. Type your answer and press Enter.
 6. Solve riddles to earn points.
-7. Complete levels and overcome boss challenges.
-8. Try to achieve the highest score on the leaderboard.
+7. Manage your remaining lives and available time.
+8. Use hints when you need assistance.
+9. Complete levels and overcome boss challenges.
+10. Try to achieve the highest score on the leaderboard.
 
-**Goal:** Complete the challenges and become the ultimate Riddle Quest champion!
+### 🏆 Your Mission
+
+**Solve riddles, survive challenges, earn points, and become the ultimate Riddle Quest champion!**
 
 ---
 
 ## 🏗️ Project Architecture
 
-The game follows an Object-Oriented Programming approach.
+Riddle Quest follows an Object-Oriented Programming approach.
+
+The project is organized into multiple classes, each responsible for specific game functionalities.
 
 ### Main Components
 
-**RiddleGame**
-- Contains the main entry point.
-- Starts the game engine.
+#### 🧩 RiddleGame
 
-**GameEngine**
+- Contains the `main()` method.
+- Serves as the entry point of the application.
+- Initializes and starts the game engine.
+
+#### ⚙️ GameEngine
+
 - Controls the overall gameplay.
-- Manages game progression and player interactions.
+- Manages game progression.
+- Handles player interactions.
+- Coordinates different game components.
 
-**Level**
+#### 📚 Level
+
 - Represents the base structure of game levels.
 - Defines common properties and behaviors.
+- Supports inheritance and polymorphism.
+- Provides shared functionality for different level types.
 
-**InputReader**
+#### ⌨️ InputReader
+
 - Handles player input.
+- Uses the `Runnable` interface.
 - Supports concurrent input processing.
+- Helps manage input during timed challenges.
 
-**ConsoleUI**
+#### 🎨 ConsoleUI
+
 - Manages terminal output.
-- Displays colorful text and game information.
+- Displays colorful text.
+- Handles game messages and visual elements.
+- Improves the overall console experience.
 
-**Leaderboard**
-- Manages player rankings and scores.
+#### 🏆 Leaderboard
 
-Other supporting classes handle game data, riddles, scoring, sound effects, and additional gameplay functionality.
+- Manages player rankings.
+- Stores and retrieves player scores.
+- Displays leaderboard information.
+- Maintains player performance records.
+
+### Supporting Components
+
+Other supporting classes handle:
+
+- Riddle data management
+- Player information
+- Scoring calculations
+- Sound effects
+- Game levels and boss challenges
+- Additional gameplay functionality
+
+This modular architecture improves code organization, readability, maintainability, and reusability.
 
 ---
 
 ## 👨‍💻 Development Team
 
-This project was developed collaboratively by three members.
+Riddle Quest was collaboratively developed by three team members.
 
 | Team Member | Role |
 |---|---|
@@ -176,7 +303,20 @@ This project was developed collaboratively by three members.
 | **Srijon Paul** | Game Development |
 | **Akash** | Game Development |
 
-All members contributed to the development and improvement of the project.
+All three members contributed to the development, testing, and improvement of the project.
+
+### 🤝 Collaboration
+
+Git and GitHub were used for:
+
+- Version control
+- Code sharing
+- Collaborative development
+- Branch management
+- Tracking changes
+- Integrating team contributions
+
+This collaborative workflow helped the team gain practical experience with software development and project coordination.
 
 ---
 
@@ -190,22 +330,32 @@ The primary objectives are to:
 - Implement multithreading in a practical application.
 - Demonstrate exception handling.
 - Practice file handling and data management.
-- Improve problem-solving and programming skills.
-- Gain experience with Git and GitHub collaboration.
+- Utilize Java Collections.
+- Develop a modular and maintainable application.
+- Improve logical thinking and problem-solving skills.
+- Gain practical experience with Git and GitHub.
+- Develop teamwork and collaborative programming skills.
+
+The project combines theoretical Java programming concepts with practical game development.
 
 ---
 
 ## 🔮 Future Improvements
 
+Although Riddle Quest is designed as a console-based game, several enhancements could be introduced in future versions.
+
 Potential improvements include:
 
-- Graphical User Interface (GUI)
-- Additional riddle categories
-- More challenging levels
-- Multiplayer functionality
-- Online leaderboard
-- Improved animations and sound effects
-- Customizable difficulty settings
+- 🖥️ **Graphical User Interface:** Develop a GUI using JavaFX or Swing.
+- 🧩 **Additional Riddles:** Introduce more riddles and categories.
+- 👑 **Advanced Boss Levels:** Add more complex challenges.
+- 👥 **Multiplayer Mode:** Allow multiple players to compete.
+- 🌐 **Online Leaderboard:** Store and compare scores online.
+- 🎵 **Enhanced Audio:** Introduce background music and improved sound effects.
+- 🎬 **Improved Animations:** Add more engaging visual effects.
+- ⚙️ **Difficulty Settings:** Allow players to select difficulty levels.
+- 💾 **Save System:** Enable players to save and resume progress.
+- 🏅 **Achievements:** Reward players for completing special challenges.
 
 ---
 
@@ -215,8 +365,18 @@ This project was developed for educational purposes.
 
 ---
 
-### ⭐ Support the Project
+## ⭐ Support the Project
 
-If you find this project interesting, consider giving the repository a ⭐ on GitHub.
+If you find Riddle Quest interesting, consider supporting the project by giving the repository a ⭐ on GitHub.
+
+Your support encourages further development and improvements!
+
+**🔗 GitHub Repository:** [Riddle Quest](https://github.com/srijonpaulriki/Riddle-Game)
+
+---
+
+### 🧩 Think Smart. Solve Fast. Conquer the Quest!
 
 **Made with Java ☕ | Riddle Quest 🧩**
+
+**Developed by Riad, Srijon Paul & Akash**
