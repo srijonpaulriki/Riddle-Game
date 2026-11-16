@@ -379,4 +379,4 @@ Your support encourages further development and improvements!
 
 **Made with Java ☕ | Riddle Quest 🧩**
 
-**Developed by Riad, Srijon Paul & Akash**
+**Developed by Riad, Srijon Paul & Akash Talukder**
